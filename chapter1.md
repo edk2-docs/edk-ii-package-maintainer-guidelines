@@ -81,4 +81,33 @@ New content is define as:
 * 
 
 
+## EDK II Module Information (INF) Files
+
+**SPECIFICATION:** *EDK II Module Information (INF) File Specification*
+
+### INF_VERSION
+Unfortunately, the name of this entry is a bit misleading (sorry about that). This entry represents the version of the INF specification, not the version of the INF.
+
+1. New EDK II Modules shall always use the value specified in the current version of the INF spec.
+2. When the Module Developer adds content not defined in the spec that was current at the time the INF file was created, the value shall be updated to the value specified in the current version of the INF spec.
+3. The TianoCore wiki documents are written generically (and are not maintained). As such, these pages may have incorrect versions of the ```INF_VERSION``` values.
+
+### FILE_GUID
+This value shall be changed when a non-backward compatible change is made to the INF file from a change to the module's code.
+
+**Rationale**
+
+This value is used by tools that create and install UEFI Distribution Packages (http://www.uefi.org/specifications).
+
+Other tools may use the GUID value (along with the ```VERSION_STRING```) to determine whether non-backward compatible changes have been made to the module. This may also be used by design rule checking tools.
+
+Non-backward compatible changes may cause build errors, when a module no longer produces a GUID, PROTOCOL or PPI that was produced in a previous version of the module.
+
+**Non-backward compatible changes include, but are not limited to the following:**
+1. A GUID is no longer produced
+2. A PROTOCOL is no longer producted
+3. A PPI is no longer producted
+4. A PCD's access method was changed in the code, such as using PcdGetEx instead of PcdGet macros
+5. A PCD's access method was changed due to a change in the DEC file that declared the PCD
+ 
 
