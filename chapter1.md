@@ -63,7 +63,7 @@ The value consists of a major number and a minor number.
 
 #### Minor Number
 1. If the PACKAGE_GUID value changes, the minor number may be reset to a starting value.
-2. If the PACKAGE_GUID value is unchanged and new content is added (not a result of an update to any specification), the minor number may be incremented.
+2. If the PACKAGE\_GUID value is unchanged and new content is added (not a result of an update to any specification), the minor number may be incremented. This includes adding content to the PACKAGE_UNI file or adding comment block content (like @PROMPT or @ValidList entries).
 
 
 **Rationale**
