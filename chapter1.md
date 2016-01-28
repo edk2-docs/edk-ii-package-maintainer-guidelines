@@ -6,6 +6,8 @@ This chapter provides guidelines for both the Package Maintainer and Module Deve
 
 These values are used by tools that create and install UEFI Distribution Packages conforming to the *UEFI Platform Initialization Distribution Packaging Specification*.
 
+Other tools may use these values to determine if the INF/DEC files can be processed or whether other content (declarations, library instances or modules) is still available.
+
 * http://www.uefi.orig/specifications
 
 **Always check the released versions of the EDK II Specification**
@@ -56,19 +58,21 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * Removal of a PCD Declaration
     * Redefinition of a PCD's Access Method (changing a FixedAtBuild PCD to a FeatureFlag PCD)
     * Changing the Token Number, Datum Type or TokenSpaceGuidCName in a PCD entry.
+*Modules
+    * Modules Removed from a Package (Library Class Instances and other modules)
 
 ### PACKAGE_VERSION value
 The value consists of a major number and a minor number.
 
 #### Major Number
 1. If the PACKAGE_GUID value changes, the major number may be reset to a starting value.
-2. If the PACKAGE_GUID value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number may be incremented.
-3. If the PACKAGE_GUID value is unchanged and new content is added due to other Industry Standard Specification releases, the major number may be incremented.
+2. If the PACKAGE_GUID value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number shall be incremented.
+3. If the PACKAGE_GUID value is unchanged and new content is added due to other Industry Standard Specification releases, the major number shall be incremented.
 
 #### Minor Number
 1. If the PACKAGE_GUID value changes, the minor number may be reset to a starting value.
 2. The minor number should be incremented if the PACKAGE\_GUID value is unchanged and new content is added (not a result of an update to any specification), the minor number may be incremented. This includes adding content to the PACKAGE_UNI file or adding comment block content (like @PROMPT or @ValidList entries).
-3. If new modules are added to the package and these modules are not covered by previous rules to major or minor number changes, the minor number should be incremented.
+3. If new modules are added to the package and these modules are not covered by previous rules to GUID, major or minor number changes, the minor number shall be incremented.
 
 
 **Rationale**
