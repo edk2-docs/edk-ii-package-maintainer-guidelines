@@ -106,6 +106,8 @@ Unfortunately, the name of this entry is a bit misleading. This entry represents
 ### FILE_GUID value
 This value shall be changed when a non-backward compatible change is made to the INF file from a change to the module's code.
 
+There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Also, Microsoft Visual Studio also has a GUID generator.
+
 **Rationale**
 
 Tools may use the FILE\_GUID value (along with the ```VERSION_STRING```) to determine whether non-backward compatible changes have been made to the module. This may also be used by design rule checking tools.
