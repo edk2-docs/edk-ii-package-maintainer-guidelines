@@ -1,4 +1,18 @@
-My Awesome Book
+EDK II Package Maintainer Guidelines
 =======
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+Revision: 0.3
+
+January 28, 2016
+
+
+This document provides guidelines for developers that maintain EDK II Packages.
+
+Included in this document are version guidelines for the maintainer as well as the module owners.
+
+
+| **Revision** | **Description** | **Date** |
+| :----: | :----- | -----: |
+| 0.3 | Draft for review | January 2016 |
+|        |        |        |
+
