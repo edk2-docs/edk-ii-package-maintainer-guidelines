@@ -1,3 +1,3 @@
 # Summary
 
-* [Versioning](chapter1.md)
+* [Versioning Guidelines](chapter1.md)
