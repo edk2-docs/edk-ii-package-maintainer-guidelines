@@ -14,5 +14,5 @@ Included in this document are version guidelines for the maintainer as well as t
 | **Revision** | **Description** | **Date** |
 | :----: | :----- | -----: |
 | 0.3 | Draft for review | January 2016 |
-|        |        |        |
+| &#32; | &#32; | &#32; |
 
