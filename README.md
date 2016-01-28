@@ -5,6 +5,7 @@ Revision: 0.3
 
 January 28, 2016
 
+Copyright &copy; 2016 Intel Corporation. All rights reserved.
 
 This document provides guidelines for developers that maintain EDK II Packages.
 
