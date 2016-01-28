@@ -8,7 +8,7 @@ These values are used by tools that create and install UEFI Distribution Package
 
 Other tools may use these values to determine if the INF/DEC files can be processed or whether other content (declarations, library instances or modules) is still available.
 
-* http://www.uefi.orig/specifications
+* http://www.uefi.org/specifications
 
 **Always check the released versions of the EDK II Specification**
 
@@ -34,6 +34,8 @@ Tools that process the EDK II Meta-data files may use this value to determine wh
 ### PACKAGE_GUID value
 This value shall be changed when a non-backward compatible change is made to the DEC file or content declared in the DEC has been modified.
 
+There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Also, Microsoft Visual Studio also has a GUID generator.
+
 **Rationale**
 
 Tools may use the GUID value (along with the ```PACKAGE_VERSION```) to determine whether non-backward compatible changes have been made to the package. This may also be used by design rule checking tools.
@@ -48,15 +50,18 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 * GUIDs
     * Removal of a GUID Declaration (including the header file)
     * Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
+    * An API is removed or modified in a non-backward compatible way
 * PROTOCOLs
     * Removal of a Protocol Declaration (including the header file)
     * Modifying a data structure in a Protocol's header file by removing, reordering or changing a data type
+    * An API is removed or modified in a non-backward compatible way
 * PPIs
     * Removal of a PPI Declaration (including the header file)
     * Modifying a data structure in a PPI's header file by removing, reordering or changing a data type
-*PCDs
+    * An API is removed or modified in a non-backward compatible way
+* PCDs
     * Removal of a PCD Declaration
-    * Redefinition of a PCD's Access Method (changing a FixedAtBuild PCD to a FeatureFlag PCD)
+    * Deleting of a PCD's Access Method (changing a FixedAtBuild PCD to a FeatureFlag PCD)
     * Changing the Token Number, Datum Type or TokenSpaceGuidCName in a PCD entry.
 *Modules
     * Modules Removed from a Package (Library Class Instances and other modules)
@@ -92,7 +97,7 @@ New content is define as:
 **SPECIFICATION:** *EDK II Module Information (INF) File Specification*
 
 ### INF_VERSION value
-Unfortunately, the name of this entry is a bit misleading (sorry about that). This entry represents the version of the INF specification, not the version of the INF.
+Unfortunately, the name of this entry is a bit misleading. This entry represents the version of the INF specification, not the version of the INF.
 
 1. New EDK II Modules shall always use the value specified in the current version of the INF spec.
 2. When the Module Developer adds content not defined in the spec that was current at the time the INF file was created, the value shall be updated to the value specified in the current version of the INF spec.
