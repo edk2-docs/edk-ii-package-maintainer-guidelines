@@ -67,7 +67,8 @@ The value consists of a major number and a minor number.
 
 #### Minor Number
 1. If the PACKAGE_GUID value changes, the minor number may be reset to a starting value.
-2. If the PACKAGE\_GUID value is unchanged and new content is added (not a result of an update to any specification), the minor number may be incremented. This includes adding content to the PACKAGE_UNI file or adding comment block content (like @PROMPT or @ValidList entries).
+2. The minor number should be incremented if the PACKAGE\_GUID value is unchanged and new content is added (not a result of an update to any specification), the minor number may be incremented. This includes adding content to the PACKAGE_UNI file or adding comment block content (like @PROMPT or @ValidList entries).
+3. If new modules are added to the package and these modules are not covered by previous rules to major or minor number changes, the minor number should be incremented.
 
 
 **Rationale**
@@ -115,15 +116,14 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 The value consists of a major number and a minor number.
 
 #### Major Number
-1. If the FILE_GUID value changes, the major number may be reset to a starting value.
-2. If the FILE_GUID value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number may be incremented.
-3. If the FILE_GUID value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number may be incremented.
-
+1. If the FILE_GUID value changes, the major number shall be reset to a starting value.
+2. If the FILE_GUID value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number shall be incremented.
+3. If the FILE_GUID value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number shall be incremented.
 
 #### Minor Number
-1. If the FILE\_GUID value changes, the minor number may be reset to a starting value.
-2. If the FILE\_GUID value is unchanged and new functionality is added (not a result of an update to any specification), the minor number may be incremented. 
-3. If the FILE\_GUID is unchanged and content is added to the MODULE\_UNI\_FILE file or adding comment block content (like adding # USAGE entries).
+1. If the FILE\_GUID value changes, the minor number shall be reset to a starting value.
+2. If the FILE\_GUID value is unchanged and new functionality is added (not a result of an update to any specification), the minor number shall be incremented. 
+3. If the FILE\_GUID is unchanged and content is added to the MODULE\_UNI\_FILE file or adding comment block content (like adding # USAGE entries), the minor number may be incremented.
 
 
 **Rationale**
