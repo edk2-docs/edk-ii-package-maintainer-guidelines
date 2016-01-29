@@ -62,3 +62,13 @@ A module is either an executable image or a library instance. For a list of modu
 ## module type
 
 All libraries and components belong to one of the following module types: BASE, SEC, PEI_CORE, PEIM, DXE_CORE, SMM_CORE, DXE_DRIVER, DXE_RUNTIME_DRIVER, DXE_SMM_DRIVER, DXE_SAL_DRIVER, UEFI_DRIVER, or UEFI_APPLICATION. These definitions provide a framework that is consistent with a similar set of requirements. A module that is of module type BASE, depends only on headers and libraries provided in the MDE Package, while a module that is of module type DXE_DRIVER depends on common DXE components.
+
+## Package
+
+A package is a container. It can hold a collection of files for any given set of modules. Packages may be described as one of the following types of modules:
+
+- source modules, containing all source files and descriptions of a module
+- binary modules, containing EFI Sections or a Framework File System and a description file specific to linking and binary editing of features and attributes specified in a Platform Configuration Database (PCD).
+- mixed modules, with both binary and source modules
+
+Multiple modules can be combined into a package, and multiple packages can be combined into a single package.
