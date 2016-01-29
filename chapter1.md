@@ -175,7 +175,9 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 
  
 ### VERSION_STRING value
-The value consists of a major number and a minor number.
+The version number is used to track backward compatible changes to an EDK II module, such as adding a new function. The value should increment when new features are added, however, there are no hard and fast rules about the ```VERSION_STRING``` value. 
+
+The value consists of a major number and an optional minor number. (Best practices suggest using both a major and minor number.) 
 
 #### Major Number
 1. If the ```FILE_GUID``` value changes, the major number may be reset to a starting value, such as 1, or it may be incremented.
