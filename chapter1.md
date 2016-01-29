@@ -34,9 +34,9 @@ Tools that process the EDK II Meta-data files may use this value to determine wh
 ### PACKAGE_GUID value
 This value shall be changed when a non-backward compatible change is made to the DEC file or content declared in the DEC has been modified.
 
-There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Also, Microsoft Visual Studio also has a GUID generator.
+There are many tools available to create new GUID values. There is a Web site where a GUID can be generated: http://www.guidgen.com. Microsoft Visual Studio also has a GUID generator. Linux distributions may also come with a GUID generator, such as uuid.
 
-Package Maintainers may update the GUID value if there are significant new features added to a package that are not related to any new specs instead of updating the PACKAGE\_VERSION value.
+Package Maintainers may update the GUID value if there are significant new features added to a package that are not related to any new specs instead of updating the ```PACKAGE_VERSION``` value.
 
 **Rationale**
 
@@ -87,8 +87,8 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 * PCDs
     * Adding a new PCD declaration
     * Modifying the default value of the PCD
-    * Updating the @PROMPT or HELP strings
-    * Allow a PCD to use additional Access Methods (adding FixedAtBuild PCD to PatchableInModule PCD access methods)
+    * Updating the ```@PROMPT``` or ```HELP``` strings
+    * Allow a PCD to use additional Access Methods (adding **FixedAtBuild** PCD to **PatchableInModule** PCD access methods)
 * Modules
     * Adding new modules (Package Maintainer may optionally update the GUID)
 
@@ -96,13 +96,13 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 The value consists of a major number and a minor number.
 
 #### Major Number
-1. If the PACKAGE\_GUID value changes, the major number may be reset to a starting value or it may be incremented.
-2. If the PACKAGE\_GUID value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number shall be incremented.
-3. If the PACKAGE\_GUID value is unchanged and new content is added due to other Industry Standard Specification releases, the major number shall be incremented.
+1. If the ```PACKAGE_GUID``` value changes, the major number may be reset to a starting value or it may be incremented.
+2. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number shall be incremented.
+3. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to other Industry Standard Specification releases, the major number shall be incremented.
 
 #### Minor Number
-1. If the PACKAGE\_GUID value changes, the minor number may be reset to a starting value, such as 0, if the major number was incremented.
-2. The minor number should be incremented if the PACKAGE\_GUID value is unchanged and new content is added (not a result of an update to any specification), and the major number was not incremented. This includes adding content to the PACKAGE\_UNI\_FILE or adding comment block content (like @PROMPT or @ValidList entries).
+1. If the ```PACKAGE_GUID``` value changes, the minor number may be reset to a starting value, such as 0, if the major number was incremented.
+2. The minor number should be incremented if the ```PACKAGE_GUID``` value is unchanged and new content is added (not a result of an update to any specification), and the major number was not incremented. This includes adding content to the ```PACKAGE_UNI_FILE``` or adding comment block content (like ```@PROMPT``` or ```@ValidList``` entries).
 3. If new modules are added to the package and these modules are not covered by previous rules to GUID, major or minor number changes, the minor number shall be incremented.
 
 
@@ -116,7 +116,7 @@ New content is define as:
 * Adding a new Protocol
 * Adding a new PPI
 * Adding a new PCD
-* Adding new values to a @ValidList, 
+* Adding new values to a ```@ValidList```
 
 
 ## EDK II Module Information (INF) Files
@@ -133,11 +133,11 @@ Unfortunately, the name of this entry is a bit misleading. This entry represents
 ### FILE_GUID value
 This value shall be changed when a non-backward compatible change is made to the INF file from a change to the module's code.
 
-There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Also, Microsoft Visual Studio also has a GUID generator.
+There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Microsoft Visual Studio also has a GUID generator. Linux distributions may also come with a GUID generator, such as uuid.
 
 **Rationale**
 
-Tools may use the FILE\_GUID value (along with the ```VERSION_STRING```) to determine whether non-backward compatible changes have been made to the module. This may also be used by design rule checking tools.
+Tools may use the ```FILE_GUID``` value (along with the ```VERSION_STRING```) to determine whether non-backward compatible changes have been made to the module. This may also be used by design rule checking tools.
 
 Non-backward compatible changes may cause build errors, when a module no longer produces a GUID, PROTOCOL or PPI that was produced in a previous version of the module.
 
@@ -146,33 +146,33 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 * A GUID is no longer produced
 * A PROTOCOL is no longer produced
 * A PPI is no longer produced
-* Changing a Protocol, PPI or GUID's USAGE from CONSUMES to PRODUCES
-* A PCD's access method was changed in the code, such as using PcdGetEx instead of PcdGet macros
+* Changing a Protocol, PPI or GUID's USAGE from ```CONSUMES``` to ```PRODUCES```
+* A PCD's access method was changed in the code, such as using ```PcdGetEx``` instead of ```PcdGet``` macros
 * A PCD's access method was changed due to a change in the DEC file that declared the PCD
-* A PCD from one package is replaced by a PCD from another PACKAGE
+* A PCD from one package is replaced by a PCD from another EDK II package
 * Adding or changing entries to a DEPEX expression
  
 
 **Examples of backward compatible changes include, but are not limited to the following:**
 * Removing a Library Class dependency
-* Changing a SOMETIMES\_PRODUCES or SOMETIMES\_CONSUMES to PRODUCES or CONSUMES
+* Changing a ```SOMETIMES_PRODUCES``` or ```SOMETIMES_CONSUMES``` to ```PRODUCES``` or ```CONSUMES```
 * Removing entries from the DEPEX expression
 * Adding additional .C or .UNI files to a module (such as splitting a single .C file into .C and .H files)
-* Removing a GUID, PROTOCOL or PPI that had a USAGE of CONSUMES or SOMETIMES_CONSUMES
+* Removing a GUID, PROTOCOL or PPI that had a ```USAGE``` of ```CONSUMES``` or ```SOMETIMES_CONSUMES```
 
  
 ### VERSION_STRING value
 The value consists of a major number and a minor number.
 
 #### Major Number
-1. If the FILE\_GUID value changes, the major number may be reset to a starting value, such as 1, or it may be incremented.
-2. If the FILE\_GUID value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number shall be incremented.
-3. If the FILE\_GUID value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number shall be incremented.
+1. If the ```FILE_GUID``` value changes, the major number may be reset to a starting value, such as 1, or it may be incremented.
+2. If the ```FILE_GUID``` value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number shall be incremented.
+3. If the ```FILE_GUID``` value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number shall be incremented.
 
 #### Minor Number
-1. If the FILE\_GUID value changes, the minor number shall be reset to a starting value.
-2. If the FILE\_GUID value is unchanged and new functionality is added (not a result of an update to any specification), the minor number shall be incremented. 
-3. If the FILE\_GUID is unchanged and content is added to the MODULE\_UNI\_FILE file or adding comment block content (like adding # USAGE entries), the minor number may be incremented.
+1. If the ```FILE_GUID``` value changes, the minor number shall be reset to a starting value.
+2. If the ```FILE_GUID``` value is unchanged and new functionality is added (not a result of an update to any specification), the minor number shall be incremented. 
+3. If the ```FILE_GUID``` is unchanged and content is added to the ```MODULE_UNI_FILE``` file or adding comment block content (like adding ```# USAGE``` entries), the minor number may be incremented.
 
 
 **Rationale**
