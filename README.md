@@ -9,6 +9,8 @@ Copyright &copy; 2016 Intel Corporation. All rights reserved.
 
 This document provides guidelines for developers that maintain EDK II Packages.
 
+Also included in the Versioning Guidelines chapter is a section for Module Developers.
+
 Included in this document are version guidelines for the maintainer as well as the module owners.
 
 
