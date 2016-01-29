@@ -61,22 +61,43 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * An API is removed or modified in a non-backward compatible way
 * PCDs
     * Removal of a PCD Declaration
-    * Deleting of a PCD's Access Method (changing a FixedAtBuild PCD to a FeatureFlag PCD)
+    * Deleting of a PCD's Access Method (i.e., changing a FixedAtBuild PCD to a FeatureFlag PCD)
     * Changing the Token Number, Datum Type or TokenSpaceGuidCName in a PCD entry.
 *Modules
     * Modules Removed from a Package (Library Class Instances and other modules)
+
+** Examples of backward compatible changes include, but are not limited to the following:**
+* Library Classes
+    *  Adding a new library class
+    *  Adding a new data structure to a library class header
+* GUIDs
+    *  Adding a new GUID declaration
+    *  Adding a new API to the GUID's header
+* PROTOCOLS
+    * Adding a new PROTOCOL declaration
+    * Adding a new API to the protocol's header
+* PPIs
+    * Adding a new PPI declaration
+    * Adding a new API to the PPI's header
+* PCDs
+    * Adding a new PCD declaration
+    * Modifying the default value of the PCD
+    * Updating the @PROMPT or HELP strings
+    * Allow a PCD to use additional Access Methods (adding FixedAtBuild PCD to PatchableInModule PCD access methods)
+* Modules
+    * Adding new modules (Package Maintainer may optionally update the GUID)
 
 ### PACKAGE_VERSION value
 The value consists of a major number and a minor number.
 
 #### Major Number
-1. If the PACKAGE_GUID value changes, the major number may be reset to a starting value.
-2. If the PACKAGE_GUID value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number shall be incremented.
-3. If the PACKAGE_GUID value is unchanged and new content is added due to other Industry Standard Specification releases, the major number shall be incremented.
+1. If the PACKAGE\_GUID value changes, the major number may be reset to a starting value or it may be incremented.
+2. If the PACKAGE\_GUID value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number shall be incremented.
+3. If the PACKAGE\_GUID value is unchanged and new content is added due to other Industry Standard Specification releases, the major number shall be incremented.
 
 #### Minor Number
-1. If the PACKAGE_GUID value changes, the minor number may be reset to a starting value.
-2. The minor number should be incremented if the PACKAGE\_GUID value is unchanged and new content is added (not a result of an update to any specification), the minor number may be incremented. This includes adding content to the PACKAGE_UNI file or adding comment block content (like @PROMPT or @ValidList entries).
+1. If the PACKAGE\_GUID value changes, the minor number may be reset to a starting value, such as 0, if the major number was incremented.
+2. The minor number should be incremented if the PACKAGE\_GUID value is unchanged and new content is added (not a result of an update to any specification), and the major number was not incremented. This includes adding content to the PACKAGE\_UNI\_FILE or adding comment block content (like @PROMPT or @ValidList entries).
 3. If new modules are added to the package and these modules are not covered by previous rules to GUID, major or minor number changes, the minor number shall be incremented.
 
 
@@ -116,20 +137,31 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 
 **Non-backward compatible changes include, but are not limited to the following:**
 
-1. A GUID is no longer produced
-2. A PROTOCOL is no longer produced
-3. A PPI is no longer produced
-4. A PCD's access method was changed in the code, such as using PcdGetEx instead of PcdGet macros
-5. A PCD's access method was changed due to a change in the DEC file that declared the PCD
+* A GUID is no longer produced
+* A PROTOCOL is no longer produced
+* A PPI is no longer produced
+* Changing a Protocol, PPI or GUID's USAGE from CONSUMES to PRODUCES
+* A PCD's access method was changed in the code, such as using PcdGetEx instead of PcdGet macros
+* A PCD's access method was changed due to a change in the DEC file that declared the PCD
+* A PCD from one package is replaced by a PCD from another PACKAGE
+* Adding or changing entries to a DEPEX expression
+ 
+
+**Examples of backward compatible changes include, but are not limited to the following:**
+* Removing a Library Class dependency
+* Changing a SOMETIMES\_PRODUCES or SOMETIMES\_CONSUMES to PRODUCES or CONSUMES
+* Removing entries from the DEPEX expression
+* Adding additional .C or .UNI files to a module (such as splitting a single .C file into .C and .H files)
+* Removing a GUID, PROTOCOL or PPI that had a USAGE of CONSUMES or SOMETIMES_CONSUMES
 
  
 ### VERSION_STRING value
 The value consists of a major number and a minor number.
 
 #### Major Number
-1. If the FILE_GUID value changes, the major number shall be reset to a starting value.
-2. If the FILE_GUID value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number shall be incremented.
-3. If the FILE_GUID value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number shall be incremented.
+1. If the FILE\_GUID value changes, the major number may be reset to a starting value, such as 1, or it may be incremented.
+2. If the FILE\_GUID value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number shall be incremented.
+3. If the FILE\_GUID value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number shall be incremented.
 
 #### Minor Number
 1. If the FILE\_GUID value changes, the minor number shall be reset to a starting value.
