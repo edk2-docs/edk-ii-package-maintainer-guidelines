@@ -5,13 +5,11 @@ This chapter provides guidelines for both the Package Maintainer and Module Deve
 **Rationale**
 
 These values are used by tools that create and install UEFI Distribution Packages conforming to the *UEFI Platform Initialization Distribution Packaging Specification*.
+* http://www.uefi.org/specifications
 
 Other tools may use these values to determine if the INF/DEC files can be processed or whether other content (declarations, library instances or modules) is still available.
 
-* http://www.uefi.org/specifications
-
 **Always check the released versions of the EDK II Specification**
-
 * https://github.com/tianocore/Docs
 
 ***Note:*** *Bug fixes to modules do not require changes to version values.*
@@ -55,7 +53,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
     * An API is removed or modified in a non-backward compatible way
 * PROTOCOLs
-    * Removal of a Protocol Declaration (including the header file)
+    * Removal of a PROTOCOL Declaration (including the header file)
     * Modifying a data structure in a Protocol's header file by removing, reordering or changing a data type
     * An API is removed or modified in a non-backward compatible way
 * PPIs
@@ -93,9 +91,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * Adding new modules (Package Maintainer may optionally update the GUID)
 
 ### PACKAGE_VERSION value
-The version number is used to track backward compatible changes to an EDK II package.
-
-There are no hard and fast rules about the ```PACKAGE_VERSION``` other than the value should increment when new features are added.
+The version number is used to track backward compatible changes to an EDK II package. The value should increment when new features are added, however, there are no hard and fast rules about the ```PACKAGE_VERSION``` value. 
 
 The value consists of a major number and a minor number. 
 
@@ -104,17 +100,17 @@ When the GUID value (above) changes, the package maintainer may choose to do one
 2. Reset the value to 1.0, indicative of the first version of this package identified by this GUID.
 3. Leave the value untouched, for example if the the current version is 1.0
 
-
 #### Major Number
+The following are recommended practices:
 1. If the ```PACKAGE_GUID``` value changes, the major number may be reset to a starting value or it may be incremented.
-2. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number shall be incremented.
-3. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to other Industry Standard Specification releases, the major number shall be incremented.
+2. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number should be incremented.
+3. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to other Industry Standard Specification releases, the major number should be incremented.
 
 #### Minor Number
-1. If the ```PACKAGE_GUID``` value changes, the minor number may be reset to a starting value, such as 0, if the major number was incremented.
+The following are recommended practices:
+1. If the ```PACKAGE_GUID``` value changes, the minor number may be reset to a starting value, such as 0, if the major number was incremented or reset to a starting value.
 2. The minor number should be incremented if the ```PACKAGE_GUID``` value is unchanged and new content is added (not a result of an update to any specification), and the major number was not incremented. This includes adding content to the ```PACKAGE_UNI_FILE``` or adding comment block content (like ```@PROMPT``` or ```@ValidList``` entries).
 3. If new modules are added to the package and these modules are not covered by previous rules to GUID, major or minor number changes, the minor number shall be incremented.
-
 
 **Rationale**
 
@@ -123,7 +119,7 @@ Tools may use this value to determine if new content has been added to the DEC f
 New content is define as:
 * Adding a new library class
 * Adding a new GUID
-* Adding a new Protocol
+* Adding a new PROTOCOL
 * Adding a new PPI
 * Adding a new PCD
 * Adding new values to a ```@ValidList```
@@ -156,7 +152,7 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 * A GUID is no longer produced
 * A PROTOCOL is no longer produced
 * A PPI is no longer produced
-* Changing a Protocol, PPI or GUID's USAGE from ```CONSUMES``` to ```PRODUCES```
+* Changing a PROTOCOL, PPI or GUID's USAGE from ```CONSUMES``` to ```PRODUCES```
 * A PCD's access method was changed in the code, such as using ```PcdGetEx``` instead of ```PcdGet``` macros
 * A PCD's access method was changed due to a change in the DEC file that declared the PCD
 * A PCD from one package is replaced by a PCD from another EDK II package
