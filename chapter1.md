@@ -66,6 +66,8 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * Removal of a PCD Declaration
     * Deleting of a PCD's Access Method (i.e., changing a FixedAtBuild PCD to a FeatureFlag PCD)
     * Changing the Token Number, Datum Type or TokenSpaceGuidCName in a PCD entry.
+    * Adding restrictions to the validation tags (i.e., removing a value from a @ValidList entry)
+
 *Modules
     * Modules Removed from a Package (Library Class Instances and other modules)
 
