@@ -46,27 +46,27 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 **Non-backward compatible changes include, but are not limited to the following:**
 
 * Library Classes
-    * Removal of a Library Class (including the header file)
-    * Modifying a data structure in a library class header file by removing, reordering or changing a data type
+    - Removal of a Library Class (including the header file)
+    - Modifying a data structure in a library class header file by removing, reordering or changing a data type
 * GUIDs
-    * Removal of a GUID Declaration (including the header file)
-    * Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
-    * An API is removed or modified in a non-backward compatible way
+    - Removal of a GUID Declaration (including the header file)
+    - Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
+    - An API is removed or modified in a non-backward compatible way
 * PROTOCOLs
-    * Removal of a PROTOCOL Declaration (including the header file)
-    * Modifying a data structure in a Protocol's header file by removing, reordering or changing a data type
-    * An API is removed or modified in a non-backward compatible way
+    - Removal of a PROTOCOL Declaration (including the header file)
+    - Modifying a data structure in a Protocol's header file by removing, reordering or changing a data type
+    - An API is removed or modified in a non-backward compatible way
 * PPIs
-    * Removal of a PPI Declaration (including the header file)
-    * Modifying a data structure in a PPI's header file by removing, reordering or changing a data type
-    * An API is removed or modified in a non-backward compatible way
+    - Removal of a PPI Declaration (including the header file)
+    - Modifying a data structure in a PPI's header file by removing, reordering or changing a data type
+    - An API is removed or modified in a non-backward compatible way
 * PCDs
-    * Removal of a PCD Declaration
-    * Deleting of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
-    * Changing the Token Number, Datum Type or Token Space GUID C Name in a PCD entry.
-    * Adding restrictions to the validation tags (i.e., removing a value from a ```@ValidList``` entry)
+    - Removal of a PCD Declaration
+    - Deleting of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
+    - Changing the Token Number, Datum Type or Token Space GUID C Name in a PCD entry.
+    - Adding restrictions to the validation tags (i.e., removing a value from a ```@ValidList``` entry)
 * Modules
-    * Modules Removed from a Package (Library Class Instances and other modules)
+    - Modules Removed from a Package (Library Class Instances and other modules)
 
 ** Examples of backward compatible changes include, but are not limited to the following:**
 * Library Classes
