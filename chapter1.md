@@ -189,4 +189,5 @@ New functionality is define as:
 * Consuming or producing a new GUID
 * Consuming or producing a new Protocol
 * Consuming or producing a new PPI
+* Adding support for another module type
 * Using a new PCD
