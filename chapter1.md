@@ -123,7 +123,7 @@ The following are recommended practices:
 
 Tools may use this value to determine if new content has been added to the DEC file  EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II BaseTools, uses this value during UDP
 
-New content is define as:
+New content is defines as:
 * Adding a new library class
 * Adding a new GUID
 * Adding a new PROTOCOL
@@ -192,7 +192,7 @@ The value consists of a major number and a minor number.
 
 Tools may use this value to determine if new functionality has been added to the module.
 
-New functionality is define as:
+New functionality is defines as:
 * Requiring a new library class for the module to function
 * Consuming or producing a new GUID
 * Consuming or producing a new Protocol
