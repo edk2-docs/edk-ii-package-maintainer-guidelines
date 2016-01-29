@@ -9,7 +9,7 @@ These values are used by tools that create and install UEFI Distribution Package
 
 Other tools may use these values to determine if the INF/DEC files can be processed or whether other content (declarations, library instances or modules) is still available.
 
-**Always check the released versions of the EDK II Specification**
+**Always check the released versions of the EDK II Specifications**
 * https://github.com/tianocore/Docs
 
 ***Note:*** *Bug fixes to modules do not require changes to version values.*
