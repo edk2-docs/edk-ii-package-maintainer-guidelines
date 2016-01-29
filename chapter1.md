@@ -12,7 +12,7 @@ Other tools may use these values to determine if the INF/DEC files can be proces
 **Always check the released versions of the EDK II Specifications**
 * https://github.com/tianocore/Docs
 
-***Note:*** *Bug fixes to modules do not require changes to version values.*
+***Note:*** *Bug fixes to modules do not require changes to version values provided no features were added.*
 
 
 ## EDK II Package Declaration (DEC) Files
@@ -62,9 +62,9 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * An API is removed or modified in a non-backward compatible way
 * PCDs
     * Removal of a PCD Declaration
-    * Deleting of a PCD's Access Method (i.e., changing a FixedAtBuild PCD to a FeatureFlag PCD)
-    * Changing the Token Number, Datum Type or TokenSpaceGuidCName in a PCD entry.
-    * Adding restrictions to the validation tags (i.e., removing a value from a @ValidList entry)
+    * Deleting of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
+    * Changing the Token Number, Datum Type or Token Space GUID C Name in a PCD entry.
+    * Adding restrictions to the validation tags (i.e., removing a value from a ```@ValidList``` entry)
 
 *Modules
     * Modules Removed from a Package (Library Class Instances and other modules)
