@@ -28,19 +28,22 @@ Other tools may use these values to determine if the INF/DEC files can be proces
 **Rationale**
 
 Tools that process the EDK II Meta-data files may use this value to determine whether the tool can process all information in the file.
-- Some tools may choose to provide warning messages, while other tools may give error messages.
-- Some tools may choose to examine content that was defined at the time of the spec release, and ignore content that was introduced in later versions of the specification.
+* Some tools may choose to provide warning messages, while other tools may give error messages.
+* Some tools may choose to examine content that was defined at the time of the spec release, and ignore content that was introduced in later versions of the specification.
 
 ### PACKAGE_GUID value
 This value shall be changed when a non-backward compatible change is made to the DEC file or content declared in the DEC has been modified.
 
 There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Also, Microsoft Visual Studio also has a GUID generator.
 
+Package Maintainers may update the GUID value if there are significant new features added to a package that are not related to any new specs instead of updating the PACKAGE\_VERSION value.
+
 **Rationale**
 
 Tools may use the GUID value (along with the ```PACKAGE_VERSION```) to determine whether non-backward compatible changes have been made to the package. This may also be used by design rule checking tools.
 
 Non-backward compatible changes may cause build errors, when a module in a different packages uses content declared in another EDK II package that is no longer available.
+
 
 **Non-backward compatible changes include, but are not limited to the following:**
 
@@ -111,6 +114,7 @@ New content is define as:
 * Adding a new Protocol
 * Adding a new PPI
 * Adding a new PCD
+* Adding new values to a @ValidList, 
 
 
 ## EDK II Module Information (INF) Files
