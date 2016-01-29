@@ -38,3 +38,8 @@ Platform Configuration Database.
 ## PPI
 
 A PEIM-to-PEIM Interface that is named by a GUID.
+
+
+## PEIM
+
+An API named by a GUID.
