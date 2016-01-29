@@ -53,3 +53,8 @@ An API named by a GUID.
 ## Library Class
 
 A library class defines the API or interface set for a library. The consumer of the library is coded to the library class definition. Library classes are defined via a library class .h file that is published by a package.
+
+
+## module
+
+A module is either an executable image or a library instance. For a list of module types supported by this package, see module type.
