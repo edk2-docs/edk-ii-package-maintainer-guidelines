@@ -33,3 +33,8 @@ GUID also refers to an API named by a GUID.
 ## PCD
 
 Platform Configuration Database.
+
+
+## PPI
+
+A PEIM-to-PEIM Interface that is named by a GUID.
