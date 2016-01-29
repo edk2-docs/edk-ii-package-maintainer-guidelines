@@ -23,7 +23,7 @@ Other tools may use these values to determine if the INF/DEC files can be proces
 ### DEC_SPECIFICATION value
 1. New EDK II Packages shall always use the value specified in the current version of the DEC spec.
 2. When the Package Maintainer adds content not defined in the spec that was current at the time the DEC file was created, the value shall be updated to the value specified in the current version of the DEC spec.
-3. The TianoCore wiki documents are written generically (and may not be updated every time a specification is changed). As such, these pages may have incorrect versions of the ```DEC_SPECIFICATION``` values.
+3. The TianoCore wiki documents are written generically (and may not be updated every time a specification is changed). As such, the wiki pages may have incorrect versions of the ```DEC_SPECIFICATION``` values.
 
 **Rationale**
 
@@ -135,7 +135,7 @@ Unfortunately, the name of this entry is a bit misleading. This entry represents
 
 1. New EDK II Modules shall always use the value specified in the current version of the INF spec.
 2. When the Module Developer adds content not defined in the spec that was current at the time the INF file was created, the value shall be updated to the value specified in the current version of the INF spec.
-3. The TianoCore wiki documents are written generically (and may not be updated every time a specification is changed). As such, these pages may have incorrect versions of the ```INF_VERSION``` values.
+3. The TianoCore wiki documents are written generically (and may not be updated every time a specification is changed). As such, the wiki pages may have incorrect versions of the ```INF_VERSION``` values.
 
 ### FILE_GUID value
 This value shall be changed when a non-backward compatible change is made to the INF file from a change to the module's code.
