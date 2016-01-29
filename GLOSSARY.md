@@ -48,3 +48,8 @@ An API named by a GUID.
 ## PROTOCOL
 
 An API named by a GUID.
+
+
+## Library Class
+
+A library class defines the API or interface set for a library. The consumer of the library is coded to the library class definition. Library classes are defined via a library class .h file that is published by a package.
