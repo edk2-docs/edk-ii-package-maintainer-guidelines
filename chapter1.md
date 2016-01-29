@@ -4,7 +4,7 @@ This chapter provides guidelines for both the Package Maintainer and Module Deve
 
 **Rationale**
 
-These values are used by tools that create and install UEFI Distribution Packages conforming to the *UEFI Platform Initialization Distribution Packaging Specification*.
+These values are used by tools that create and install UEFI Distribution Packages (UDP) conforming to the *UEFI Platform Initialization Distribution Packaging Specification*.
 * http://www.uefi.org/specifications
 
 Other tools may use these values to determine if the INF/DEC files can be processed or whether other content (declarations, library instances or modules) is still available.
@@ -113,7 +113,7 @@ The following are recommended practices:
 
 **Rationale**
 
-Tools may use this value to determine if new content has been added to the DEC file.
+Tools may use this value to determine if new content has been added to the DEC file  EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II BaseTools, uses this value during UDP
 
 New content is define as:
 * Adding a new library class
