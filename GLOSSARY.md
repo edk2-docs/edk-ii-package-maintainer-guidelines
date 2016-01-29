@@ -14,6 +14,10 @@ http://www.uefi.org/
 
 EFI Development Kit, version II that provides updated firmware module layouts and custom tools, superseding the original EDK.
 
+## EFI
+Generic term that refers to one of the versions of the EFI specification: EFI 1.02, EFI 1.10
+or any of the UEFI specifications.
+
 ## DEC
 
 EDK II Package Declaration File. This file declares information about what is provided in the package. An EDK II package is a collection of like content.
@@ -66,7 +70,6 @@ All libraries and components belong to one of the following module types: BASE, 
 ## Package
 
 A package is a container. It can hold a collection of files for any given set of modules. Packages may be described as one of the following types of modules:
-
 - source modules, containing all source files and descriptions of a module
 - binary modules, containing EFI Sections or a Framework File System and a description file specific to linking and binary editing of features and attributes specified in a Platform Configuration Database (PCD).
 - mixed modules, with both binary and source modules
