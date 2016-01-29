@@ -93,7 +93,17 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * Adding new modules (Package Maintainer may optionally update the GUID)
 
 ### PACKAGE_VERSION value
-The value consists of a major number and a minor number.
+The version number is used to track backward compatible changes to an EDK II package.
+
+There are no hard and fast rules about the ```PACKAGE_VERSION``` other than the value should increment when new features are added.
+
+The value consists of a major number and a minor number. 
+
+When the GUID value (above) changes, the package maintainer may choose to do one of the following:
+1. Increment the value, say from 1.10 to 2.0, indicative of a new release of this package. 
+2. Reset the value to 1.0, indicative of the first version of this package identified by this GUID.
+3. Leave the value untouched, for example if the the current version is 1.0
+
 
 #### Major Number
 1. If the ```PACKAGE_GUID``` value changes, the major number may be reset to a starting value or it may be incremented.
