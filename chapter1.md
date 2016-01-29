@@ -4,6 +4,8 @@ This chapter provides guidelines for both the Package Maintainer and Module Deve
 
 **Rationale**
 
+GUIDs and versions discussed in the document may be used by consumers of an EDK II package to identifiy changes to packages that may impact their own development.
+
 These values are used by tools that create and install UEFI Distribution Packages (UDP) conforming to the *UEFI Platform Initialization Distribution Packaging Specification*.
 * http://www.uefi.org/specifications
 
