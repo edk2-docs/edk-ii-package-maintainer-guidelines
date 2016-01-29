@@ -58,3 +58,7 @@ A library class defines the API or interface set for a library. The consumer of 
 ## module
 
 A module is either an executable image or a library instance. For a list of module types supported by this package, see module type.
+
+## module type
+
+All libraries and components belong to one of the following module types: BASE, SEC, PEI_CORE, PEIM, DXE_CORE, SMM_CORE, DXE_DRIVER, DXE_RUNTIME_DRIVER, DXE_SMM_DRIVER, DXE_SAL_DRIVER, UEFI_DRIVER, or UEFI_APPLICATION. These definitions provide a framework that is consistent with a similar set of requirements. A module that is of module type BASE, depends only on headers and libraries provided in the MDE Package, while a module that is of module type DXE_DRIVER depends on common DXE components.
