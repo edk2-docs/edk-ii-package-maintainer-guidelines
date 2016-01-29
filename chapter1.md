@@ -34,7 +34,7 @@ Tools that process the EDK II Meta-data files may use this value to determine wh
 ### PACKAGE_GUID value
 This value shall be changed when a non-backward compatible change is made to the DEC file or content declared in the DEC has been modified.
 
-There are many tools available to create new GUID values. There is a Web site where a GUID can be generated: http://www.guidgen.com. Microsoft Visual Studio also has a GUID generator. Linux distributions may also come with a GUID generator, such as uuid.
+There are many tools available to create new GUID values. There is a Web site where a GUID can be generated: http://www.guidgen.com. Microsoft Visual Studio also has a GUID generator, uuidgen. Linux distributions may also come with a GUID generator, such as uuid.
 
 Package Maintainers may update the GUID value if there are significant new features added to a package that are not related to any new specs instead of updating the ```PACKAGE_VERSION``` value.
 
@@ -51,7 +51,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     - Removal of a Library Class (including the header file)
     - Modifying a data structure in a library class header file by removing, reordering or changing a data type
 * GUIDs
-    - Removal of a GUID Declaration (including the header file)
+    - Removal of a GUID Declaration (including the header file if applicable)
     - Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
     - An API is removed or modified in a non-backward compatible way
 * PROTOCOLs
@@ -64,7 +64,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     - An API is removed or modified in a non-backward compatible way
 * PCDs
     - Removal of a PCD Declaration
-    - Deleting of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
+    - Removing or changing of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
     - Changing the Token Number, Datum Type or Token Space GUID C Name in a PCD entry.
     - Adding restrictions to the validation tags (i.e., removing a value from a ```@ValidList``` entry)
 * Modules
@@ -73,18 +73,24 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 ** Examples of backward compatible changes include, but are not limited to the following:**
 * Library Classes
     *  Adding a new library class
+    *  Adding a new function to a library class
     *  Adding a new data structure to a library class header
+    *  Extending or adding new functions or members
 * GUIDs
     *  Adding a new GUID declaration
-    *  Adding a new API to the GUID's header
+    *  Adding a new API to the GUID's header (if applicable)
+    *  Extending or adding new functions or members
 * PROTOCOLS
     * Adding a new PROTOCOL declaration
-    * Adding a new API to the protocol's header
+    * Adding a new field to the protocol's header
+    * Extending or adding new functions or member
 * PPIs
     * Adding a new PPI declaration
-    * Adding a new API to the PPI's header
+    * Adding a new field to the PPI's header
+    * Extending or adding new functions or members
 * PCDs
     * Adding a new PCD declaration
+    * Reordering the PCDs within an Access Method section
     * Modifying the default value of the PCD
     * Updating the ```@PROMPT``` or ```HELP``` strings
     * Allow a PCD to use additional Access Methods (adding **FixedAtBuild** PCD to **PatchableInModule** PCD access methods)
@@ -140,7 +146,7 @@ Unfortunately, the name of this entry is a bit misleading. This entry represents
 ### FILE_GUID value
 This value shall be changed when a non-backward compatible change is made to the INF file from a change to the module's code.
 
-There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Microsoft Visual Studio also has a GUID generator. Linux distributions may also come with a GUID generator, such as uuid.
+There are many tools available to create new GUID values. There is a Web site where a GUID can be generated:  http://www.guidgen.com.  Microsoft Visual Studio also has a GUID generator, uuidgen. Linux distributions may also come with a GUID generator, such as uuid.
 
 **Rationale**
 
