@@ -45,6 +45,9 @@ Tools may use the GUID value (along with the ```PACKAGE_VERSION```) to
 determine whether non-backward compatible changes have been made to the package.
 This may also be used by design rule checking tools.
 
+The UDP spec defines rules for tools that use this value when installing
+a UEFI Distribution Package.
+
 Non-backward compatible changes may cause build errors, when a module in a 
 different packages uses content declared in another EDK II package that is no
 longer available.
@@ -146,7 +149,7 @@ fast rules about updating the ```PACKAGE_VERSION``` value.
 Tools may use this value to determine if new content has been added to the DEC
 file.
 
-The UDP spec defines rules for tools that use these value when installing
+The UDP spec defines rules for tools that use this value when installing
 a UEFI Distribution Package.
 
 For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II 
