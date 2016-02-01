@@ -45,7 +45,7 @@ for the module to execute correctly.
 ## Rationale
 
 GUIDs and versions discussed in the document may be used by consumers of an 
-EDK II package to identifiy changes to packages that may impact their own 
+EDK II package to identify changes to packages that may impact their own 
 development.
 
 These values are used by tools that create and install UEFI Distribution 
@@ -55,6 +55,9 @@ Packaging Specification*.
 Other tools may use these values to determine if the INF/DEC files can be 
 processed or whether other content (declarations, library instances or 
 modules) is still available.
+
+Some tools may use the surface area descriptions for checking design rules.
+
 
 **Always check the released versions of the EDK II Specifications**
 * https://github.com/tianocore/Docs
