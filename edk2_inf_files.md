@@ -11,6 +11,7 @@ Unfortunately, the name of this entry is a bit misleading. This entry
 represents the version of the INF specification, not the version of the 
 INF file.
 
+
 1. New EDK II Modules shall always use the value specified in the current 
 version of the INF spec.
 2. When the Module Developer adds content not defined in the spec that was
@@ -22,18 +23,20 @@ may have incorrect versions of the ```INF_VERSION``` values.
 
 **Rationale**
 
-Tools may use this value to determine if new content has been added to the
-module or if a tool can support processing this INF.
+Tools that process the EDK II INF files may use this value to determine 
+whether the tool can process all information in the file.
+
+* Some tools may choose to provide warning messages, while other tools may 
+give error messages.
+* Some tools may choose to examine content that was defined at the time of the
+spec release, and ignore content that was introduced in later versions of the 
+specification.
 
 
 ## FILE_GUID value
 
 This value shall be changed when a non-backward compatible change is made
 to the INF file from a change to the module's code.
-
-For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II
-BaseTools, uses this value during UDP creation. During installation, UEFIPT
-uses these values to follow dependency rules defined by the UDP spec.
 
 There are many tools available to create new GUID values. There is a Web
 site where a GUID can be generated:  http://www.guidgen.com.  Microsoft
@@ -44,8 +47,13 @@ also come with a GUID generator, such as uuid.
 
 Tools may use the ```FILE_GUID``` value (along with the 
 ```VERSION_STRING```) to determine whether non-backward compatible changes
-have been made to the module. This may also be used by design rule checking
-tools.
+have been made to the module. This value may also be used by design rule
+checking tools.
+
+For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II
+BaseTools, uses this value during UDP creation. During installation, UEFIPT
+uses this value (along with the VERSION_STRING value) to follow dependency
+rules defined by the UDP spec.
 
 Non-backward compatible changes may cause build errors, when a module no
 longer produces a GUID, PROTOCOL or PPI that was produced in a previous
