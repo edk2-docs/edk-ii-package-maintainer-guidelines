@@ -282,9 +282,9 @@ include, but are not limited to the following:
     * Changing a PROTOCOL, PPI or GUID's USAGE from ```CONSUMES``` to 
     ```PRODUCES```
     * A PCD's access method was changed in the code, such as using 
-    ```PcdGetEx``` instead of ```PcdGet``` macros
-    * A PCD's access method was changed due to a change in the DEC file that
-    declared the PCD
+    ```PcdSetEx``` instead of ```PcdSet``` macros
+    * A PCD's access method was changed due to an access method change
+    in the DEC file that declared the PCD
     * A PCD from one package is replaced by a PCD from another EDK II package
     * Adding or changing entries to a DEPEX expression
  
@@ -346,15 +346,18 @@ Surface Area (see the UDP spec).
     - Consuming or producing a new GUID
     - Consuming or producing a new PROTOCOL
     - Consuming or producing a new PPI
+    - Get/Set a new PCD
     - Adding support for another module type
 
 * Examples of **new content requiring an update** to the 
 ```VERSION_STRING``` include, but are not limited to the following:
-    - Adding new key entries to the ```MODULE_UNI_FILE``` file
+    - Adding new key entries (```STR_```) to the ```MODULE_UNI_FILE```
+    file
     - Adding comment block (defined by spec) content that maps to 
     attributes or entries defined in the UDP spec. such as, adding
     ```# USAGE``` entries.
-    - Using a new PCD
+    - Adding an additional copyright (# Portions Copyright) line to
+    the module
  
 
 * Examples of **content changes requiring an update** to the 
@@ -363,6 +366,7 @@ Surface Area (see the UDP spec).
     from the general form.
     - Stop producing a GUID, PROTOCOL or PPI.
     - Stop setting a PCD value
+    - Changing the module's license
 
 
 * Examples of **content changes not requiring an update** to the
@@ -371,6 +375,9 @@ Surface Area (see the UDP spec).
     - Spelling changes in comment content
     - Adding more help text in the INF or ```MODULE_UNI_FILE```.
     - Adding new language translations of existing entries in the
+    ```MODULE_UNI_FILE```
+    - Changing the copyright date in INF or ```MODULE_UNIT_FILE```
+    - Changing the Abstract or Description in the INF or 
     ```MODULE_UNI_FILE```
 
 
