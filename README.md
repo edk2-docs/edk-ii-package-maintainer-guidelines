@@ -17,9 +17,10 @@ Included in this document are version guidelines for the maintainer as well as t
 | 0.3          | Draft for review | January 2016 |
 |    &#32;     |       &#32;     |   &#32;  |
 
+
 1. [Versioning Guidelines](VersionGuidelines.md)
-2. [EDK II Package Declaration (DEC) Files](edk2_dec_files.md)
-3. [EDK II Module Information (INF) Files](edk2_inf_files.md)
+    2. [EDK II Package Declaration (DEC) Files](edk2_dec_files.md)
+    3. [EDK II Module Information (INF) Files](edk2_inf_files.md)
 
 
  
