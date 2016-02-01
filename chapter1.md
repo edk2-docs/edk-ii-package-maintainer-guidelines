@@ -184,7 +184,7 @@ Tools may use the ```FILE_GUID``` value (along with the ```VERSION_STRING```) to
 
 Non-backward compatible changes may cause build errors, when a module no longer produces a GUID, PROTOCOL or PPI that was produced in a previous version of the module.
 
-**Non-backward compatible changes requiring a GUID change include, but are not limited to the following:**
+#### Examples of non-backward compatible changes requiring a GUID change include, but are not limited to the following:
 
 * A GUID is no longer produced
 * A PROTOCOL is no longer produced
@@ -196,7 +196,7 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 * Adding or changing entries to a DEPEX expression
  
 
-**Examples of backward compatible changes not requiring a GUID change include, but are not limited to the following:**
+#### Examples of backward compatible changes not requiring a GUID change include, but are not limited to the following:
 * Removing a Library Class dependency
 * Changing a ```SOMETIMES_PRODUCES``` or ```SOMETIMES_CONSUMES``` to ```PRODUCES``` or ```CONSUMES```
 * Removing entries from the DEPEX expression
@@ -209,20 +209,23 @@ The version number is used to track backward compatible changes to an EDK II mod
 
 The value consists of a major number and an optional minor number. (Best practices suggest using both a major and minor number.) 
 
-### Major Number
-1. If the ```FILE_GUID``` value changes, the major number may be reset to a starting value, such as 1, or it may be incremented.
-2. If the ```FILE_GUID``` value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number shall be incremented.
-3. If the ```FILE_GUID``` value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number shall be incremented.
-
-#### Minor Number
-1. If the ```FILE_GUID``` value changes, the minor number shall be reset to a starting value.
-2. If the ```FILE_GUID``` value is unchanged and new functionality is added (not a result of an update to any specification), the minor number shall be incremented. 
-3. If the ```FILE_GUID``` is unchanged and content is added to the ```MODULE_UNI_FILE``` file or adding comment block content (like adding ```# USAGE``` entries), the minor number may be incremented.
-
-
 **Rationale**
 
 Tools may use this value to determine if new functionality has been added to the module.
+
+
+### Best Practices
+
+* When the ```FILE_GUID``` value changes:
+    - Increment the major number and reset the minor number to 0.
+
+
+* When the ```FILE_GUID``` value is unchanged: 
+    - If new functionality is added due to new UEFI/PI Specification releases, increment the major number and reset the minor number to 0.
+    - If new functionality is added due to other Industry Standard Specification releases, increment the major number and reset the minor number to 0.
+    - If new functionality is added (not a result of an update to any specification), increment the minor number. 
+    - Increment the minor number only if new content is added to the ```MODULE_UNI_FILE``` file or adding comment block content (like adding ```# USAGE``` entries).
+
 
 New functionality is defines as:
 * Requiring a new library class for the module to function
