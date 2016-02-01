@@ -48,56 +48,56 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 
 #### Library Classes
     
-* **Non-backward compatible changes include, but are not limited to the following:**
-    * Removal of a Library Class (including the header file)
-    * Modifying a data structure in a library class header file by removing, reordering or changing a data type
-* **A GUID change is not necessary for the following, backward comapatible conditions.**
-    *  Adding a new library class
-    *  Adding a new function to a library class
-    *  Adding a new data structure to a library class header
-    *  Extending or adding new functions or members
+* **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
+    - Removal of a Library Class (including the header file)
+    - Modifying a data structure in a library class header file by removing, reordering or changing a data type
+* **A GUID change is not necessary for backward comapatible changes*** including, but not limited to the following:
+    -  Adding a new library class
+    -  Adding a new function to a library class
+    -  Adding a new data structure to a library class header
+    -  Extending or adding new functions or members
 
 #### GUIDs
 
-* **Non-backward compatible changes include, but are not limited to the following:**
+* **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a GUID Declaration (including the header file if applicable)
     - Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
     - An API is removed or modified in a non-backward compatible way
-* **A GUID change is not necessary for the following, backward comapatible conditions.**
+* **A GUID change is not necessary for backward comapatible changes*** including, but not limited to the following:
     -  Adding a new GUID declaration
     -  Adding a new API to the GUID's header (if applicable)
     -  Extending or adding new functions or members
 
 #### PROTOCOLs
 
-* **Non-backward compatible changes include, but are not limited to the following:**
+* **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a PROTOCOL Declaration (including the header file)
     - Modifying a data structure in a Protocol's header file by removing, reordering or changing a data type
     - An API is removed or modified in a non-backward compatible way
-* **A GUID change is not necessary for the following, backward comapatible conditions.**
+* **A GUID change is not necessary for backward comapatible changes*** including, but not limited to the following:
     - Adding a new PROTOCOL declaration
     - Adding a new field to the protocol's header
     - Extending or adding new functions or member
 
 #### PPIs
 
-* **Non-backward compatible changes include, but are not limited to the following:**
+* **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a PPI Declaration (including the header file)
     - Modifying a data structure in a PPI's header file by removing, reordering or changing a data type
     - An API is removed or modified in a non-backward compatible way
-* **A GUID change is not necessary for the following, backward comapatible conditions.**
+* **A GUID change is not necessary for backward comapatible changes*** including, but not limited to the following:
     * Adding a new PPI declaration
     * Adding a new field to the PPI's header
     * Extending or adding new functions or members
 
 #### PCDs
 
-* **Non-backward compatible changes include, but are not limited to the following:**
+* **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a PCD Declaration
     - Removing or changing of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
     - Changing the Token Number, Datum Type or Token Space GUID C Name in a PCD entry.
     - Adding restrictions to the validation tags (i.e., removing a value from a ```@ValidList``` entry)
-* **A GUID change is not necessary for the following, backward comapatible conditions.**
+* **A GUID change is not necessary for backward comapatible changes*** including, but not limited to the following:
     - Adding a new PCD declaration
     - Reordering the PCDs within an Access Method section
     - Modifying the default value of the PCD
@@ -106,9 +106,9 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 
 ### Modules
 
-* **Non-backward compatible changes include, but are not limited to the following:**
+* **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Modules Removed from a Package (Library Class Instances and other modules)
-* **A GUID change is not necessary for the following, backward comapatible conditions.**
+* **A GUID change is not necessary for backward comapatible changes*** including, but not limited to the following:
     - Adding new modules (Package Maintainer may optionally update the GUID)
 
 ### PACKAGE_VERSION value
