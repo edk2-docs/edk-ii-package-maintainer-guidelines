@@ -5,7 +5,7 @@
 ## INF_VERSION value
 Unfortunately, the name of this entry is a bit misleading. This entry 
 represents the version of the INF specification, not the version of the 
-INF.
+INF file.
 
 1. New EDK II Modules shall always use the value specified in the current 
 version of the INF spec.
@@ -19,13 +19,14 @@ may have incorrect versions of the ```INF_VERSION``` values.
 Tools may use this value to determine if new content has been added to the
 module.
 
+## FILE_GUID value
+
+This value shall be changed when a non-backward compatible change is made
+to the INF file from a change to the module's code.
+
 For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II
 BaseTools, uses this value during UDP creation. During installation, UEFIPT
 uses these values to follow dependency rules defined by the UDP spec.
-
-## FILE_GUID value
-This value shall be changed when a non-backward compatible change is made
-to the INF file from a change to the module's code.
 
 There are many tools available to create new GUID values. There is a Web
 site where a GUID can be generated:  http://www.guidgen.com.  Microsoft
