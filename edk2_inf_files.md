@@ -110,6 +110,9 @@ value does not change, provided the value increases.
     minor number to 0.
     - If new functionality is added due to other specifications, 
     increment the major number and reset the minor number to 0.
+
+
+* When the ```FILE_GUID``` and major number are not changed:
     - If new functionality is added (not a result of an update to any
     specification), increment the minor number. 
     - Increment the minor number only if new content is added (see below).
