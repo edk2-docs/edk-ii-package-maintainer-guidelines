@@ -49,6 +49,7 @@ include, but are not limited to the following:
     * A GUID is no longer produced
     * A PROTOCOL is no longer produced
     * A PPI is no longer produced
+    * Adding a DEC file in the [Packages] section
     * Changing a PROTOCOL, PPI or GUID's USAGE from ```CONSUMES``` to 
     ```PRODUCES```
     * A PCD's access method was changed in the code, such as using 
@@ -59,9 +60,10 @@ include, but are not limited to the following:
     * Adding or changing entries to a DEPEX expression
  
 
-* Examples of backward compatible changes not requiring a GUID change include,
+* Examples of **backward compatible changes** not requiring a GUID change include,
 but are not limited to the following:
     * Removing a Library Class dependency
+    * Removing a DEC file in the [Packages] section
     * Changing a ```SOMETIMES_PRODUCES``` or ```SOMETIMES_CONSUMES``` to 
     ```PRODUCES``` or ```CONSUMES```
     * Removing entries from the DEPEX expression
@@ -69,16 +71,18 @@ but are not limited to the following:
     single .C file into .C and .H files)
     * Removing a GUID, PROTOCOL or PPI that had a ```USAGE``` of 
     ```CONSUMES``` or ```SOMETIMES_CONSUMES```
+    * Adding a GUID, PROTOCOL or PPI
 
  
 ## VERSION_STRING value
+
 The version number is used to track backward compatible changes to an EDK II
 module, such as adding a new function. The value should increment when new 
 features are added, however,
 there are no hard and fast rules about the ```VERSION_STRING``` value. 
 
-The value consists of a major number and an optional minor number. (Best 
-practices suggest using both a major and minor number.) 
+The value consists of a major number and an optional minor number. Best 
+practices suggest using both a major and minor number.
 
 **Rationale**
 
@@ -86,7 +90,10 @@ Tools may use this value to determine if new functionality has been added
 to the module.
 
 New content and functionality implies a change to the Description of a Module 
-Surface Area (see the UDP spec).
+Surface Area.
+
+Module developers may change the ```VERSION_STRING``` value if the FILE_GUID
+value does not change, provided the value increases.
 
 ## Best Practices
 
@@ -119,31 +126,35 @@ Surface Area (see the UDP spec).
     - Get/Set a new PCD
     - Adding support for another module type
 
+
 * Examples of **new content requiring an update** to the 
 ```VERSION_STRING``` include, but are not limited to the following:
     - Adding new key entries (```STR_```) to the ```MODULE_UNI_FILE```
     file
     - Adding comment block (defined by spec) content that maps to 
     attributes or entries defined in the UDP spec. such as, adding
-    ```# USAGE``` entries.
+    ```# USAGE``` or ```@PROMPT``` entries.
     - Adding an additional copyright (# Portions Copyright) line to
-    the module
+    the module INF.
+    
  
 
 * Examples of **content changes requiring an update** to the 
 ```VERSION_STRING``` include, but are not limited to the following:
-    - Restricting how the module is coded for PCD access methods
-    from the general form.
+    - Changing how the module is coded for PCD access methods
+    from the general form to a restrictive form, such as PcdGetEx().
     - Stop producing a GUID, PROTOCOL or PPI.
     - Stop setting a PCD value
     - Changing the module's license
+    - Adding tags (```STR_``` entries) in the ```MODULE_UNI_FILE```
 
 
 * Examples of **content changes not requiring an update** to the
 ```VERSION_STRING``` include, but are not limited to the following:
     - Bug fixes in code
-    - Spelling changes in comment content
-    - Adding more help text in the INF or ```MODULE_UNI_FILE```.
+    - Spelling changes in comment content or text specified in
+    entries in the ```MODULE_UNI_FILE```
+    - Adding more help text in the INF or ```MODULE_UNI_FILE```
     - Adding new language translations of existing entries in the
     ```MODULE_UNI_FILE```
     - Changing the copyright date in INF or ```MODULE_UNIT_FILE```
