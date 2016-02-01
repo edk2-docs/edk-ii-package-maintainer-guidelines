@@ -137,9 +137,9 @@ but not limited to the following:
 
 ## PACKAGE_VERSION value
 
-The version number is used to track backward compatible changes to an EDK II 
-package. The value should increment when new features are added however, there
-are no hard and fast rules about updating the ```PACKAGE_VERSION``` value. 
+The version number is used to track changes to an EDK II package. The value
+should increment when new features are added however, there are no hard and
+fast rules about updating the ```PACKAGE_VERSION``` value. 
 
 **Rationale**
 
