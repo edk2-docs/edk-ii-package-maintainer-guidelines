@@ -3,32 +3,32 @@
 **SPECIFICATION:** *EDK II Package Declaration (DEC) File Specification*
 
 ## DEC_SPECIFICATION value
-1. New EDK II Packages shall always use the value specified in the current version
+1. New EDK II Packages shall use the value specified in the current version
 of the DEC spec.
-2. When the Package Maintainer adds content not defined in the spec that was current
-at the time the DEC file was created, the value shall be updated to the value 
-specified in the current version of the DEC spec.
-3. The TianoCore wiki documents are written generically (and may not be updated 
-every time a specification is changed). As such, the wiki pages may have incorrect
-versions of the ```DEC_SPECIFICATION``` values.
+2. When the Package Maintainer adds content not defined in the spec that was
+current at the time the DEC file was created, the value shall be updated to 
+the value specified in the current version of the DEC spec.
+3. The TianoCore wiki documents are written generically (and may not be  
+updated every time a specification is changed). As such, the wiki pages may 
+have incorrect versions of the ```DEC_SPECIFICATION``` values.
 
 **Rationale**
 
 Tools that process the EDK II Meta-data files may use this value to determine 
 whether the tool can process all information in the file.
-* Some tools may choose to provide warning messages, while other tools may give
-error messages.
+* Some tools may choose to provide warning messages, while other tools may 
+give error messages.
 * Some tools may choose to examine content that was defined at the time of the
 spec release, and ignore content that was introduced in later versions of the 
 specification.
 
 ## PACKAGE_GUID value
 
-The ```PACKAGE_GUID``` value identifies the Package Surface Area at a given point
-in time.
+The ```PACKAGE_GUID``` value identifies the Package Surface Area at a given 
+point in time.
 
-This value shall be changed when a non-backward compatible change is made to the 
-DEC file or content declared in the DEC has been modified.
+This value shall be changed when a non-backward compatible change is made to 
+the DEC file or content declared in the DEC has been modified.
 
 There are many tools available to create new GUID values. There is a Web site 
 where a GUID can be generated: http://www.guidgen.com. Microsoft Visual Studio 
