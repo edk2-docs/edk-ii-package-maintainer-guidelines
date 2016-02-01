@@ -19,6 +19,9 @@ may have incorrect versions of the ```INF_VERSION``` values.
 Tools may use this value to determine if new content has been added to the
 module.
 
+Module developers may change ```FILE_GUID``` or ```VERSION_STRING``` values
+at any time.
+
 ## FILE_GUID value
 
 This value shall be changed when a non-backward compatible change is made
@@ -92,8 +95,6 @@ to the module.
 New content and functionality implies a change to the Description of a Module 
 Surface Area.
 
-Module developers may change the ```VERSION_STRING``` value if the FILE_GUID
-value does not change, provided the value increases.
 
 ## Best Practices
 
