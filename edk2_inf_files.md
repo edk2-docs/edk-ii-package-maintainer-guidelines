@@ -93,11 +93,8 @@ but are not limited to the following:
 
 The version number is used to track changes to an EDK II module, such as
 adding a new function. The value should increment when new features are 
-added, however, there are no hard and fast rules about the 
+added, however, there are no hard and fast rules about updating the 
 ```VERSION_STRING``` value. 
-
-The value consists of a major number and an optional minor number. Best 
-practices suggest using both a major and minor number.
 
 **Rationale**
 
@@ -107,6 +104,8 @@ to the module.
 New content and functionality implies a change to the Description of a Module 
 Surface Area.
 
+The value consists of a major number and an optional minor number. Best 
+practices suggest using both a major and minor number.
 
 ## Best Practices
 
