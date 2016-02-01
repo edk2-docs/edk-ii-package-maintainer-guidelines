@@ -35,9 +35,9 @@ where a GUID can be generated: http://www.guidgen.com. Microsoft Visual Studio
 also has a GUID generator, uuidgen. Linux distributions may also come with a 
 GUID generator, such as uuid.
 
-Package Maintainers may update the GUID value if there are significant new 
-features added to a package that are not related to any new specs instead of 
-updating the ```PACKAGE_VERSION``` value.
+Package Maintainers may update the ```PACKAGE_GUID``` value if there are 
+significant new features added to a package that are not related to any new 
+specs instead of just updating the ```PACKAGE_VERSION``` value.
 
 **Rationale**
 
