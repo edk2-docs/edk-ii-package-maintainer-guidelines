@@ -335,29 +335,42 @@ Surface Area (see the UDP spec).
     increment the major number and reset the minor number to 0.
     - If new functionality is added (not a result of an update to any
     specification), increment the minor number. 
-    - Increment the minor number only if new content is added (see below). 
+    - Increment the minor number only if new content is added (see below).
+    - Increment the minor number only if content changes require an update
+    (see below).
 
 
-
-* Examples of **new functionality** include, but are not limited to the following:
+* Examples of **new functionality requiring an update** to the 
+```VERSION_STRING``` include, but are not limited to the following:
     - Requiring a new library class for the module to function
     - Consuming or producing a new GUID
-    - Consuming or producing a new Protocol
+    - Consuming or producing a new PROTOCOL
     - Consuming or producing a new PPI
     - Adding support for another module type
 
-* Examples of **new content** include, but are not limited to the following:
-    - Adding new keys to the ```MODULE_UNI_FILE``` file
-    - Adding comment block content that maps to attributes or entries defined in 
-    the UDP spec. such as, adding ```# USAGE``` entries.
+* Examples of **new content requiring an update** to the 
+```VERSION_STRING``` include, but are not limited to the following:
+    - Adding new key entries to the ```MODULE_UNI_FILE``` file
+    - Adding comment block (defined by spec) content that maps to 
+    attributes or entries defined in the UDP spec. such as, adding
+    ```# USAGE``` entries.
     - Using a new PCD
  
 
-* Examples of **content changes** where the major and minor number do not need 
-to be changed include, but are not limited to the following:
+* Examples of **content changes requiring an update** to the 
+```VERSION_STRING``` include, but are not limited to the following:
+    - Restricting how the module is coded for PCD access methods
+    from the general form.
+    - Stop producing a GUID, PROTOCOL or PPI.
+    - Stop setting a PCD value
+
+
+* Examples of **content changes not requiring an update** to the
+```VERSION_STRING``` include, but are not limited to the following:
     - Bug fixes in code
     - Spelling changes in comment content
     - Adding more help text in the INF or ```MODULE_UNI_FILE```.
-    - Adding new language translations of existing entries in the ```MODULE_UNI_FILE```
+    - Adding new language translations of existing entries in the
+    ```MODULE_UNI_FILE```
 
 
