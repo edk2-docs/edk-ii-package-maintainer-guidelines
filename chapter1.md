@@ -223,6 +223,7 @@ Tools may use this value to determine if new functionality has been added to the
 * When the ```FILE_GUID``` value is unchanged: 
     - If new functionality is added due to new UEFI/PI Specification releases, increment the major number and reset the minor number to 0.
     - If new functionality is added due to other Industry Standard Specification releases, increment the major number and reset the minor number to 0.
+    - If new functionality is added due to other specifications, increment the major number and reset the minor number to 0.
     - If new functionality is added (not a result of an update to any specification), increment the minor number. 
     - Increment the minor number only if new content is added to the ```MODULE_UNI_FILE``` file or adding comment block content (like adding ```# USAGE``` entries).
 
@@ -234,3 +235,10 @@ New functionality is defines as:
 * Consuming or producing a new PPI
 * Adding support for another module type
 * Using a new PCD
+ 
+
+* **Examples of content changes where the major and minor number do not need to be changed** include, but are not limited to the following:
+    - Bug fixes in code
+    - Spelling changes in comment content
+    - Adding more help text in the INF or ```MODULE_UNI_FILE```.
+    - Adding new language translations of existing entries in the ```MODULE_UNI_FILE```
