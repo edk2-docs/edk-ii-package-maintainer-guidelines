@@ -31,8 +31,10 @@ modules) is still available.
 provided no features were added.*
 
 
-[DEC File Versioning](edk2_dec_files.md)
+---
 
-[INF File Versioning](edk2_inf_files.md)
+i. [DEC File Versioning](edk2_dec_files.md)
+ 
+ii. [INF File Versioning](edk2_inf_files.md)
 
 
