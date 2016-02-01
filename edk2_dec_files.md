@@ -146,8 +146,11 @@ fast rules about updating the ```PACKAGE_VERSION``` value.
 Tools may use this value to determine if new content has been added to the DEC
 file.
 
+The UDP spec defines rules for tools that use these value when installing
+a UEFI Distribution Package.
+
 For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II 
-BaseTools, uses this value during UDP creation. During installation, UEFIPT 
+BaseTools, uses the value during UDP creation. During installation, UEFIPT 
 uses these values to follow dependency rules defined by the UDP spec.
 
 The value consists of a major number and an optional minor number. Best 
