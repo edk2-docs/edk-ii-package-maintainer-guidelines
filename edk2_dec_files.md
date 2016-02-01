@@ -23,6 +23,10 @@ spec release, and ignore content that was introduced in later versions of the
 specification.
 
 ## PACKAGE_GUID value
+
+The ```PACKAGE_GUID``` value identifies the Package Surface Area at a given point
+in time.
+
 This value shall be changed when a non-backward compatible change is made to the 
 DEC file or content declared in the DEC has been modified.
 
