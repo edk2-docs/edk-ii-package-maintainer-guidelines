@@ -2,7 +2,11 @@
 
 **SPECIFICATION:** *EDK II Module Information (INF) File Specification*
 
+Module developers may change ```FILE_GUID``` or ```VERSION_STRING``` values
+at any time.
+
 ## INF_VERSION value
+
 Unfortunately, the name of this entry is a bit misleading. This entry 
 represents the version of the INF specification, not the version of the 
 INF file.
@@ -16,11 +20,11 @@ to the value specified in the current version of the INF spec.
 updated every time a specification is changed). As such, the wiki pages
 may have incorrect versions of the ```INF_VERSION``` values.
 
-Tools may use this value to determine if new content has been added to the
-module.
+**Rationale**
 
-Module developers may change ```FILE_GUID``` or ```VERSION_STRING``` values
-at any time.
+Tools may use this value to determine if new content has been added to the
+module or if a tool can support processing this INF.
+
 
 ## FILE_GUID value
 
