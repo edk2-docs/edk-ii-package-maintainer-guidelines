@@ -4,6 +4,12 @@ This document provides guidelines for both the Package Maintainer and Module
 Developer. Specifically aimed at when and why the spec version, GUID and file
 version values should be modified.
 
+Refer to the *UEFI Platform Initializat Distribution Packaging Specfication*
+for description of Package and Module Surface Area Descriptions.
+
+* http://www.uefi.org/specifications
+
+
 **Rationale**
 
 GUIDs and versions in the EDK II INF and DEC meta-data files identify the 
@@ -17,8 +23,6 @@ development.
 These values are used by tools that create and install UEFI Distribution 
 Packages (UDP) conforming to the *UEFI Platform Initialization Distribution 
 Packaging Specification*.
-
-* http://www.uefi.org/specifications
 
 Other tools may use these values to determine if the INF/DEC files can be 
 processed or whether other content (declarations, library instances or 
