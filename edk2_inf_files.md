@@ -94,12 +94,15 @@ but are not limited to the following:
 The version number is used to track changes to an EDK II module, such as
 adding a new function. The value should increment when new features are 
 added, however, there are no hard and fast rules about updating the 
-```VERSION_STRING``` value. 
+```VERSION_STRING``` value in this file.
 
 **Rationale**
 
 Tools may use this value to determine if new functionality has been added 
 to the module.
+
+The UDP spec defines rules for tools that use these value when installing
+a UEFI Distribution Package.
 
 New content and functionality implies a change to the Description of a Module 
 Surface Area.
