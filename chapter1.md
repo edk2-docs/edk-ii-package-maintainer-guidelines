@@ -17,11 +17,11 @@ Other tools may use these values to determine if the INF/DEC files can be proces
 ***Note:*** *Bug fixes to modules do not require changes to version values provided no features were added.*
 
 
-## EDK II Package Declaration (DEC) Files
+# EDK II Package Declaration (DEC) Files
 
 **SPECIFICATION:** *EDK II Package Declaration (DEC) File Specification*
 
-### DEC_SPECIFICATION value
+## DEC_SPECIFICATION value
 1. New EDK II Packages shall always use the value specified in the current version of the DEC spec.
 2. When the Package Maintainer adds content not defined in the spec that was current at the time the DEC file was created, the value shall be updated to the value specified in the current version of the DEC spec.
 3. The TianoCore wiki documents are written generically (and may not be updated every time a specification is changed). As such, the wiki pages may have incorrect versions of the ```DEC_SPECIFICATION``` values.
@@ -32,7 +32,7 @@ Tools that process the EDK II Meta-data files may use this value to determine wh
 * Some tools may choose to provide warning messages, while other tools may give error messages.
 * Some tools may choose to examine content that was defined at the time of the spec release, and ignore content that was introduced in later versions of the specification.
 
-### PACKAGE_GUID value
+## PACKAGE_GUID value
 This value shall be changed when a non-backward compatible change is made to the DEC file or content declared in the DEC has been modified.
 
 There are many tools available to create new GUID values. There is a Web site where a GUID can be generated: http://www.guidgen.com. Microsoft Visual Studio also has a GUID generator, uuidgen. Linux distributions may also come with a GUID generator, such as uuid.
@@ -46,7 +46,7 @@ Tools may use the GUID value (along with the ```PACKAGE_VERSION```) to determine
 Non-backward compatible changes may cause build errors, when a module in a different packages uses content declared in another EDK II package that is no longer available.
 
 
-#### Library Classes
+### Library Classes
     
 * **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a Library Class (including the header file)
@@ -57,7 +57,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     -  Adding a new data structure to a library class header
     -  Extending or adding new functions or members
 
-#### GUIDs
+### GUIDs
 
 * **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a GUID Declaration (including the header file if applicable)
@@ -68,7 +68,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     -  Adding a new API to the GUID's header (if applicable)
     -  Extending or adding new functions or members
 
-#### PROTOCOLs
+### PROTOCOLs
 
 * **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a PROTOCOL Declaration (including the header file)
@@ -79,7 +79,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     - Adding a new field to the protocol's header
     - Extending or adding new functions or member
 
-#### PPIs
+### PPIs
 
 * **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a PPI Declaration (including the header file)
@@ -90,7 +90,7 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
     * Adding a new field to the PPI's header
     * Extending or adding new functions or members
 
-#### PCDs
+### PCDs
 
 * **A GUID change is required for non-backward compatible changes** including, but not limited to the following:
     - Removal of a PCD Declaration
@@ -111,18 +111,20 @@ Non-backward compatible changes may cause build errors, when a module in a diffe
 * **A GUID change is not necessary for backward comapatible changes*** including, but not limited to the following:
     - Adding new modules (Package Maintainer may optionally update the GUID)
 
-### PACKAGE_VERSION value
+## PACKAGE_VERSION value
 
 The version number is used to track backward compatible changes to an EDK II package. The value should increment when new features are added however, there are no hard and fast rules about updating the ```PACKAGE_VERSION``` value. 
 
 **Rationale**
 
-Tools may use this value to determine if new content has been added to the DEC file.  For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II BaseTools, uses this value during UDP creation and installation to follow dependency rules defined by the UDP spec.
+Tools may use this value to determine if new content has been added to the DEC file.
+
+For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II BaseTools, uses this value during UDP creation. During installation, UEFIPT uses these values to follow dependency rules defined by the UDP spec.
 
 The value consists of a major number and an optional minor number. Best practices suggest using both a major and minor number.
 
 
-#### Best Practices
+### Best Practices
 The following are recommended practices:
 
 * When the ```PACKAGE_GUID``` is changed:
@@ -141,7 +143,7 @@ The following are recommended practices:
     - Increment the minor number if content is added (see below).      
     - If new modules are added to the package and these modules are not covered by previous recommendations, increment the minor number.
 
-New content implies a change to the Description of a Package Surface Area (see the UDP specification).
+New content implies a change to the Description of a Package Surface Area (see the UDP spec).
 
 * **Examples of new content** include, but are not limited to the following:
   - Adding meta-tags (```@PROMPT``` or ```@ValidList``` comment block entries) that map to attributes or elements defined by the UDP specification
@@ -160,11 +162,11 @@ New content implies a change to the Description of a Package Surface Area (see t
     - Adding more help text before GUID, PROTOCOL, PPI or PCD entries.
     - Adding new language translations of existing entries in the ```PACKAGE_UNI_FILE```
 
-## EDK II Module Information (INF) Files
+# EDK II Module Information (INF) Files
 
 **SPECIFICATION:** *EDK II Module Information (INF) File Specification*
 
-### INF_VERSION value
+## INF_VERSION value
 Unfortunately, the name of this entry is a bit misleading. This entry represents the version of the INF specification, not the version of the INF.
 
 1. New EDK II Modules shall always use the value specified in the current version of the INF spec.
@@ -182,7 +184,7 @@ Tools may use the ```FILE_GUID``` value (along with the ```VERSION_STRING```) to
 
 Non-backward compatible changes may cause build errors, when a module no longer produces a GUID, PROTOCOL or PPI that was produced in a previous version of the module.
 
-**Non-backward compatible changes include, but are not limited to the following:**
+**Non-backward compatible changes requiring a GUID change include, but are not limited to the following:**
 
 * A GUID is no longer produced
 * A PROTOCOL is no longer produced
@@ -194,7 +196,7 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 * Adding or changing entries to a DEPEX expression
  
 
-**Examples of backward compatible changes include, but are not limited to the following:**
+**Examples of backward compatible changes not requiring a GUID change include, but are not limited to the following:**
 * Removing a Library Class dependency
 * Changing a ```SOMETIMES_PRODUCES``` or ```SOMETIMES_CONSUMES``` to ```PRODUCES``` or ```CONSUMES```
 * Removing entries from the DEPEX expression
@@ -202,12 +204,12 @@ Non-backward compatible changes may cause build errors, when a module no longer 
 * Removing a GUID, PROTOCOL or PPI that had a ```USAGE``` of ```CONSUMES``` or ```SOMETIMES_CONSUMES```
 
  
-### VERSION_STRING value
+## VERSION_STRING value
 The version number is used to track backward compatible changes to an EDK II module, such as adding a new function. The value should increment when new features are added, however, there are no hard and fast rules about the ```VERSION_STRING``` value. 
 
 The value consists of a major number and an optional minor number. (Best practices suggest using both a major and minor number.) 
 
-#### Major Number
+### Major Number
 1. If the ```FILE_GUID``` value changes, the major number may be reset to a starting value, such as 1, or it may be incremented.
 2. If the ```FILE_GUID``` value is unchanged and new functionality is added due to new UEFI/PI Specification releases, the major number shall be incremented.
 3. If the ```FILE_GUID``` value is unchanged and new functionality is added due to other Industry Standard Specification releases, the major number shall be incremented.
