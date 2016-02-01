@@ -18,6 +18,7 @@ Other tools may use these values to determine if the INF/DEC files can be proces
 
 
 ## EDK II Package Declaration (DEC) Files
+
 **SPECIFICATION:** *EDK II Package Declaration (DEC) File Specification*
 
 ### DEC_SPECIFICATION value
@@ -45,57 +46,70 @@ Tools may use the GUID value (along with the ```PACKAGE_VERSION```) to determine
 Non-backward compatible changes may cause build errors, when a module in a different packages uses content declared in another EDK II package that is no longer available.
 
 
-**Non-backward compatible changes include, but are not limited to the following:**
-
-* Library Classes
-    - Removal of a Library Class (including the header file)
-    - Modifying a data structure in a library class header file by removing, reordering or changing a data type
-* GUIDs
-    - Removal of a GUID Declaration (including the header file if applicable)
-    - Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
-    - An API is removed or modified in a non-backward compatible way
-* PROTOCOLs
-    - Removal of a PROTOCOL Declaration (including the header file)
-    - Modifying a data structure in a Protocol's header file by removing, reordering or changing a data type
-    - An API is removed or modified in a non-backward compatible way
-* PPIs
-    - Removal of a PPI Declaration (including the header file)
-    - Modifying a data structure in a PPI's header file by removing, reordering or changing a data type
-    - An API is removed or modified in a non-backward compatible way
-* PCDs
-    - Removal of a PCD Declaration
-    - Removing or changing of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
-    - Changing the Token Number, Datum Type or Token Space GUID C Name in a PCD entry.
-    - Adding restrictions to the validation tags (i.e., removing a value from a ```@ValidList``` entry)
-* Modules
-    - Modules Removed from a Package (Library Class Instances and other modules)
-
-** Examples of backward compatible changes include, but are not limited to the following:**
-* Library Classes
+#### Library Classes
+    
+* **Non-backward compatible changes include, but are not limited to the following:**
+    * Removal of a Library Class (including the header file)
+    * Modifying a data structure in a library class header file by removing, reordering or changing a data type
+* **A GUID change is not necessary for the following, backward comapatible conditions.**
     *  Adding a new library class
     *  Adding a new function to a library class
     *  Adding a new data structure to a library class header
     *  Extending or adding new functions or members
-* GUIDs
-    *  Adding a new GUID declaration
-    *  Adding a new API to the GUID's header (if applicable)
-    *  Extending or adding new functions or members
-* PROTOCOLS
-    * Adding a new PROTOCOL declaration
-    * Adding a new field to the protocol's header
-    * Extending or adding new functions or member
-* PPIs
+
+#### GUIDs
+
+* **Non-backward compatible changes include, but are not limited to the following:**
+    - Removal of a GUID Declaration (including the header file if applicable)
+    - Modifying a data structure in a GUID's header file by removing, reordering or changing a data type
+    - An API is removed or modified in a non-backward compatible way
+* **A GUID change is not necessary for the following, backward comapatible conditions.**
+    -  Adding a new GUID declaration
+    -  Adding a new API to the GUID's header (if applicable)
+    -  Extending or adding new functions or members
+
+#### PROTOCOLs
+
+* **Non-backward compatible changes include, but are not limited to the following:**
+    - Removal of a PROTOCOL Declaration (including the header file)
+    - Modifying a data structure in a Protocol's header file by removing, reordering or changing a data type
+    - An API is removed or modified in a non-backward compatible way
+* **A GUID change is not necessary for the following, backward comapatible conditions.**
+    - Adding a new PROTOCOL declaration
+    - Adding a new field to the protocol's header
+    - Extending or adding new functions or member
+
+#### PPIs
+
+* **Non-backward compatible changes include, but are not limited to the following:**
+    - Removal of a PPI Declaration (including the header file)
+    - Modifying a data structure in a PPI's header file by removing, reordering or changing a data type
+    - An API is removed or modified in a non-backward compatible way
+* **A GUID change is not necessary for the following, backward comapatible conditions.**
     * Adding a new PPI declaration
     * Adding a new field to the PPI's header
     * Extending or adding new functions or members
-* PCDs
-    * Adding a new PCD declaration
-    * Reordering the PCDs within an Access Method section
-    * Modifying the default value of the PCD
-    * Updating the ```@PROMPT``` or ```HELP``` strings
-    * Allow a PCD to use additional Access Methods (adding **FixedAtBuild** PCD to **PatchableInModule** PCD access methods)
-* Modules
-    * Adding new modules (Package Maintainer may optionally update the GUID)
+
+#### PCDs
+
+* **Non-backward compatible changes include, but are not limited to the following:**
+    - Removal of a PCD Declaration
+    - Removing or changing of a PCD's Access Method (i.e., changing a **FixedAtBuild** PCD to a **FeatureFlag** PCD)
+    - Changing the Token Number, Datum Type or Token Space GUID C Name in a PCD entry.
+    - Adding restrictions to the validation tags (i.e., removing a value from a ```@ValidList``` entry)
+* **A GUID change is not necessary for the following, backward comapatible conditions.**
+    - Adding a new PCD declaration
+    - Reordering the PCDs within an Access Method section
+    - Modifying the default value of the PCD
+    - Updating the ```@PROMPT``` or ```HELP``` strings
+    - Allow a PCD to use additional Access Methods (adding **FixedAtBuild** PCD to **PatchableInModule** PCD access methods)
+
+### Modules
+
+* **Non-backward compatible changes include, but are not limited to the following:**
+    - Modules Removed from a Package (Library Class Instances and other modules)
+* **A GUID change is not necessary for the following, backward comapatible conditions.**
+    - Adding new modules (Package Maintainer may optionally update the GUID)
 
 ### PACKAGE_VERSION value
 The version number is used to track backward compatible changes to an EDK II package. The value should increment when new features are added, however, there are no hard and fast rules about the ```PACKAGE_VERSION``` value. 
