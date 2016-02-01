@@ -50,6 +50,9 @@ Tools may use the ```FILE_GUID``` value (along with the
 have been made to the module. This value may also be used by design rule
 checking tools.
 
+The UDP spec defines rules for tools to use this value when installing
+a UEFI Distribution Package.
+
 For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II
 BaseTools, uses this value during UDP creation. During installation, UEFIPT
 uses this value (along with the VERSION_STRING value) to follow dependency
@@ -101,7 +104,7 @@ added, however, there are no hard and fast rules about updating the
 Tools may use this value to determine if new functionality has been added 
 to the module.
 
-The UDP spec defines rules for tools that use these value when installing
+The UDP spec defines rules for tools to use this value when installing
 a UEFI Distribution Package.
 
 New content and functionality implies a change to the Description of a Module 
