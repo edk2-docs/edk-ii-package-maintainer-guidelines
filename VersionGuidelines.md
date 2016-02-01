@@ -21,7 +21,7 @@ time.
 A complete description of the elements a package provides to support building
 modules. This includes header files for industry standard specifications, 
 library header files, include file paths within the package, GUID declarations, 
-PPI declatations, Protocol declarations, and Platform Configuration Database 
+PPI declarations, Protocol declarations, and Platform Configuration Database 
 element declarations. All of these package elements are available to Module 
 Developers and can be used to describe the Module Surface Area of a module.
 
