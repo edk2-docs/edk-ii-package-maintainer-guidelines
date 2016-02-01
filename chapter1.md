@@ -119,30 +119,33 @@ The version number is used to track backward compatible changes to an EDK II pac
 
 Tools may use this value to determine if new content has been added to the DEC file.  For example, EDK II's UEFI Packaging Tool, UEFIPT, provided with the EDK II BaseTools, uses this value during UDP creation and installation to follow dependency rules defined by the UDP spec.
 
-The value consists of a major number and an optional minor number. (Best practices suggest using both a major and minor number.) 
+The value consists of a major number and an optional minor number. Best practices suggest using both a major and minor number.
 
-When the GUID value (above) changes, the package maintainer may choose to do one of the following:
-1. Increment the value, say from 1.10 to 2.0, indicative of a new release of this package.
-2. Reset the value to 1.0, indicative of the first version of this package identified by this GUID.
-3. Leave the value untouched, for example if the current version is 1.0
 
-#### Major Number
+#### Best Practices
 The following are recommended practices:
-1. If the ```PACKAGE_GUID``` value changes, increment the major number.
-2. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to new UEFI/PI Specification releases, the major number should be incremented.
-3. If the ```PACKAGE_GUID``` value is unchanged and new content is added due to other Industry Standard Specification releases, the major number should be incremented.
-4. If the ```PACKAGE_GUID``` value is unchange and a significant number of modules is added, increment the major number.
 
-#### Minor Number
-The following are recommended practices:
-1. If the ```PACKAGE_GUID``` value changes, reset the minor number to a starting value, such as 0.
-2. The minor number should be incremented if the ```PACKAGE_GUID``` value is unchanged and new content is added (not a result of an update to any specification), and the major number was not incremented. This includes adding content to the ```PACKAGE_UNI_FILE``` or adding comment block content (like ```@PROMPT``` or ```@ValidList``` entries).
-3. If new modules are added to the package and these modules are not covered by previous rules for updating the GUID, or recommendations for major or minor number changes, the minor number shall be incremented.
+* When the ```PACKAGE_GUID``` is changed:
+    - Increment the major number and reset the minor number to 0, i.e., 1.10 to 2.0.
+    
 
+* When the ```PACKAGE_GUID``` is not changed:
+    - If new content is added due to new UEFI/PI Specification releases, increment the major number and reset the minor number to 0.
+    - If new content is added due to other Industry Standard Specification releases, increment the major number and reset the minor number to 0.
+    - If a significant number of modules is added, increment the major number and reset the minor number to 0.
+    - If the package maintainer wants to ```tag``` a package for any other reason, increment the major number and reset the minor number to 0.
+ 
+
+* When the ```PACKAGE_GUID``` and major number are not changed:
+    - Increment the minor number if new modules are added (not a result of an update to any specification).
+    - Increment the minor number if content is added (see below).      
+    - If new modules are added to the package and these modules are not covered by previous recommendations, increment the minor number.
+
+New content implies a change to the Description of a Package Surface Area (see the UDP specification).
 
 * **Examples of new content** include, but are not limited to the following:
-  - Adding meta-tags (```@PROMPT``` comment) that map to attributes or elements defined by the UDP
-  - Adding content (```PACKAGE_UNI_FILE```) that maps to elements defined by the UDP specification
+  - Adding meta-tags (```@PROMPT``` or ```@ValidList``` comment block entries) that map to attributes or elements defined by the UDP specification
+  - Adding new entries in the (```PACKAGE_UNI_FILE```) that maps to elements defined by the UDP specification, such as adding new PROMPT strings associated with a new PCD
   - Adding a new library class
   - Adding a new GUID
   - Adding a new PROTOCOL
@@ -151,6 +154,11 @@ The following are recommended practices:
   - Adding new values to a ```@ValidList```
 
 
+* **Examples of content changes where the major and minor number do not need to be changed** include, but are not limited to the following:
+    - Bug fixes in code
+    - Spelling changes in comment content
+    - Adding more help text before GUID, PROTOCOL, PPI or PCD entries.
+    - Adding new language translations of existing entries in the ```PACKAGE_UNI_FILE```
 
 ## EDK II Module Information (INF) Files
 
