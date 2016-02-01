@@ -135,9 +135,9 @@ The following are recommended practices:
 
 #### Minor Number
 The following are recommended practices:
-1. If the ```PACKAGE_GUID``` value changes, the minor number may be reset to a starting value, such as 0, if the major number was incremented or reset to a starting value.
+1. If the ```PACKAGE_GUID``` value changes, reset the minor number to a starting value, such as 0.
 2. The minor number should be incremented if the ```PACKAGE_GUID``` value is unchanged and new content is added (not a result of an update to any specification), and the major number was not incremented. This includes adding content to the ```PACKAGE_UNI_FILE``` or adding comment block content (like ```@PROMPT``` or ```@ValidList``` entries).
-3. If new modules are added to the package and these modules are not covered by previous rules to GUID, major or minor number changes, the minor number shall be incremented.
+3. If new modules are added to the package and these modules are not covered by previous rules for updating the GUID, or recommendations for major or minor number changes, the minor number shall be incremented.
 
 
 * **Examples of new content** include, but are not limited to the following:
