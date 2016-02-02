@@ -1,8 +1,3 @@
 {
-  "plugins"       : ["tocstyles"]
-  ,"pluginsConfig":
-  {
-    "tocstyles" : [ "", "cjk-ideographic", "decimal-leading-zero" ]
-  }
-    
+  
 }
