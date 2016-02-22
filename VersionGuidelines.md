@@ -14,10 +14,16 @@ GUIDs and versions in the EDK II INF and DEC meta-data files identify the
 Surface Area Descriptions of EDK II Packages and Modules at a given point in
 time.
 
-***Note:*** *Version Guidelines apply to a single development tree. The UDP 
-Spec does not differentiate between Release branches and the trunk. Therefore,
-may be possible for two packages with the same GUID and versions to **NOT** 
-be identical.*
+***Note:*** *Version Guidelines apply to a single development tree.*
+
+The UDP Spec does not differentiate between Release branches and the trunk.
+Therefore, may be possible for two packages with the same GUID and versions 
+to **NOT** be identical. 
+
+Users supplying UEFI Distribution Packages should provide additional
+information to their customers to assist them with their installation.
+For example, letting them know that the UPD file should only be installed
+with source trees based on a UDK2015 release.
 
 
 ## Rationale
