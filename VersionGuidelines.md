@@ -1,7 +1,7 @@
 # Version Guidelines
 
-This document provides guidelines for both the Package Maintainer and Module 
-Developer. Specifically aimed at when and why the spec version, GUID and file
+This document provides guidelines for EDK II Package Maintainers and Module 
+Developers. Specifically aimed at when and why the spec version, GUID and file
 version values should be modified.
 
 Refer to the *UEFI Platform Initializat Distribution Packaging Specfication*
