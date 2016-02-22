@@ -7,7 +7,9 @@ surface area of a package are:
 - ```DEC_SPECIFICATION``` - Used by tools to determine if the file can be processed
 - ```PACKAGE_GUID``` - Used by tools to indicate non-backward compatible changes
 - ```PACKAGE_VERSION``` - Used by tools to indicate compatible changes
- 
+
+The following provide subsections provide additional rationale, examples and best
+practices.
 
 
 ## DEC_SPECIFICATION value
