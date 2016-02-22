@@ -23,7 +23,8 @@ to **NOT** be identical.
 Users supplying UEFI Distribution Packages should provide additional
 information to their customers to assist them with their installation.
 For example, letting them know that the UPD file should only be installed
-with source trees based on a UDK2015 release.
+with source trees based on a UDK2015 release or should only be appled to the
+edk2 trunk (revision f964a54 or later).
 
 
 ## Rationale
