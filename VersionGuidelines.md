@@ -4,8 +4,8 @@ This document provides guidelines for EDK II Package Maintainers and Module
 Developers. Specifically aimed at when and why the spec version, GUID and file
 version values should be modified.
 
-Refer to the *UEFI Platform Initializat Distribution Packaging Specfication*
-for description of Package and Module Surface Area Descriptions.
+Refer to the *UEFI Platform Initializat Distribution Packaging Specfication
+(UDP Spec)* for description of Package and Module Surface Area Descriptions.
 
 * http://www.uefi.org/specifications
 
@@ -13,6 +13,11 @@ for description of Package and Module Surface Area Descriptions.
 GUIDs and versions in the EDK II INF and DEC meta-data files identify the 
 Surface Area Descriptions of EDK II Packages and Modules at a given point in
 time.
+
+***Note:*** *Version Guidelines apply to a single development tree. The UDP 
+Spec does not differentiate between Release branches and the trunk. Therefore,
+may be possible for two packages with the same GUID and versions to **NOT** 
+be identical.*
 
 
 ## Rationale
