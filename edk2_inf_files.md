@@ -2,6 +2,15 @@
 
 **SPECIFICATION:** *EDK II Module Information (INF) File Specification*
 
+The three entries in the EDK II INF file that are used for determining the
+surface area of a module are:
+- ```INF_VERSION``` - Used by tools to determine if the file can be processed
+- ```FILE_GUID``` - Used by tools to indicate non-backward compatible changes
+- ```VERSION_STRING``` - Used by tools to indicate compatible changes
+
+The following provide subsections provide additional rationale, examples and best
+practices.
+
 Module developers may change ```FILE_GUID``` or ```VERSION_STRING``` values
 at any time.
 
