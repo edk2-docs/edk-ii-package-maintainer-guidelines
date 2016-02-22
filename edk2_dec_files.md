@@ -4,7 +4,7 @@
 
 The three entries in the EDK II DEC file that are used for determining the
 surface area of a package are:
-- ```DEC_SPECIFICATION``` - Used by tools to determine if the file can be processed
+- ```DEC_SPECIFICATION``` - Used by tools to determine if the DEC file can be processed
 - ```PACKAGE_GUID``` - Used by tools to indicate non-backward compatible changes
 - ```PACKAGE_VERSION``` - Used by tools to indicate compatible changes
 
