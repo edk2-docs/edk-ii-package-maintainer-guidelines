@@ -26,6 +26,19 @@ For example, letting them know that the UPD file should only be installed
 with source trees based on a UDK2015 release or should only be appled to the
 edk2 trunk (revision f964a54 or later).
 
+## When to Update
+
+There is no requirement to update versions in the INF or DEC files at during
+feature development on the trunk.
+
+Changes to a branch that warrant an update to either the GUID (for 
+non-backward compatible changes) or version (implementing a new feature 
+or adding new functionality) may be done once a set of changes have been
+complete.
+
+It is recommended that prior to a major or interim release, package DEC
+and module INF files have their GUID and Version values updated if 
+required.
 
 ## Rationale
 
