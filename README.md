@@ -33,6 +33,8 @@ Revision History
 Contents
 --------
 
+<!-- toc -->
+
 1. [Versioning Guidelines](VersionGuidelines.md)
     2. [EDK II Package Declaration (DEC) Files](edk2_dec_files.md)
     3. [EDK II Module Information (INF) Files](edk2_inf_files.md)
