@@ -1,3 +1,5 @@
+![](media/favicon-96x96.png)
+
 EDK II Package Maintainer Guidelines
 =======
 
